@@ -7,7 +7,7 @@ $blueregular:#24A3FF;
 $bluehover:#0085FF;
 $blueactive:#006CCF;
 $greybackground:#F5F5FA;
-$greybackgruondalt:#EDEDF7;
+$greybackgroundalt:#EDEDF7;
 $greytext:#B3B3BA;
 $greyseparator:#E6E6F0;
 $gradient: linear-gradient(128.63deg, #323264 0%, #323264 73.96%, #A54B5F 100%);
@@ -28,5 +28,11 @@ $gradientredtext:linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
   font-size: 16px;
   line-height: 20px;
   color:$maindark;
+}
+
+@mixin span-small{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
 }
 
