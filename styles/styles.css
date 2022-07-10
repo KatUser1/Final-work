@@ -1,0 +1,154 @@
+*, html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 1350px;
+}
+
+/*header styles*/
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 50px 0 60px;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.logo-wrapper {
+  position: relative;
+  margin-right: 29px;
+}
+
+.logo-wrapper:after {
+  content: "";
+  background: url("../images/Slash.svg") no-repeat;
+  position: absolute;
+  width: 21px;
+  height: 47px;
+  margin: 0 4px;
+}
+
+.header-left p {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 44px;
+  color: #323264;
+}
+
+.nav-header {
+  align-items: baseline;
+}
+
+.language {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #B3B3BA;
+  border-radius: 8px;
+  padding: 5px 7px;
+  width: 33px;
+  height: 25px;
+}
+
+.language:hover {
+  background: #F5F5FA;
+  border-radius: 8px;
+  padding: 5px 7px;
+  width: 33px;
+  height: 25px;
+}
+
+a.language.active {
+  background: #F0145A;
+  color: #F5F5FA;
+}
+
+header ul li {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: right;
+  color: #B3B3BA;
+  position: relative;
+  margin-left: 18px;
+  align-items: center;
+}
+
+header ul li:nth-child(1) {
+  margin-left: 12px;
+}
+
+.nav-header.right-first {
+  margin-bottom: 16px;
+}
+
+.nav-header.right-first ul li a:nth-child(2) {
+  font-weight: 700;
+  color: #B3B3BA;
+}
+
+.nav-header.right-first ul li::before {
+  content: " ";
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  background: #E6E6F0;
+  border-radius: 50%;
+  top: 6px;
+  left: -12px;
+}
+
+.nav-header.right-second ul li a {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #24A3FF;
+  margin-left: 15px;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 46px;
+  background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 60px auto;
+}
+
+/*# sourceMappingURL=styles.css.map */

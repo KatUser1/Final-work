@@ -1,0 +1,158 @@
+@import "_variables";
+
+*, html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body{
+  display: grid;
+  grid-template-rows:auto 1fr auto;
+  min-height: 100vh;
+}
+
+.wrapper{
+  margin: 0 auto;
+  width: 1350px;
+}
+
+/*header styles*/
+
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 50px 0 60px;
+}
+
+.header-left{
+  display: flex;
+  flex-direction: row;
+}
+
+.header-right{
+  display: flex;
+  flex-direction: column;
+}
+.nav-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+.logo-wrapper{
+  position: relative;
+  margin-right: 29px;
+}
+.logo-wrapper:after{
+  content: "";
+  background: url("../images/Slash.svg") no-repeat;
+  position: absolute;
+  width: 21px;
+  height: 47px;
+  margin: 0 4px;
+}
+
+.header-left p{
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 44px;
+  color: $maindark;
+}
+
+.nav-header {
+  align-items: baseline;
+
+}
+
+.language {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: $greytext;
+  border-radius: 8px;
+  padding: 5px 7px;
+  width: 33px;
+  height: 25px;
+}
+
+.language:hover{
+  background: $greybackground;
+  border-radius: 8px;
+  padding: 5px 7px;
+  width: 33px;
+  height: 25px;
+}
+
+a.language.active{
+  background: $coloraccent;
+  color: $greybackground;
+}
+
+header ul li{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: right;
+  color: $greytext;
+  position: relative;
+  margin-left: 18px;
+  align-items: center;
+
+}
+header ul li:nth-child(1){
+  margin-left: 12px;
+}
+.nav-header.right-first{
+  margin-bottom: 16px;
+}
+
+.nav-header.right-first ul li a:nth-child(2){
+  font-weight: 700;
+  color: $greytext;
+}
+
+.nav-header.right-first ul li::before{
+  content:" ";
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  background: $greyseparator;
+  border-radius: 50%;
+  top: 6px;
+  left: -12px;
+}
+
+.nav-header.right-second ul li a{
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: $blueregular;
+  margin-left: 15px;
+}
+
+
+
+h1{
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 46px;
+  background: $gradientredtext;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 60px auto;
+}
+
+
+
+
