@@ -1,0 +1,89 @@
+.wrapper-main {
+  margin: 0 auto;
+  width: 92vw;
+  max-width: 1600px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 0.63fr 0.37fr;
+  grid-column-gap: 30px;
+  margin-top: 60px;
+  padding: 0 120px;
+}
+@media screen and (min-width: 1546px) {
+  .main {
+    grid-template-columns: 0.71fr 0.3fr;
+  }
+}
+@media screen and (max-width: 1078px) {
+  .main {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .main {
+    grid-template-columns: 0.54fr 0.47fr;
+  }
+}
+.main h1 {
+  padding: 0;
+  margin: 0 0 28px;
+}
+.main .main-text p {
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 30px;
+  color: #000000;
+  text-align: left;
+}
+.main .list {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-row-gap: 40px;
+  border-left: 4px solid #E6E6F0;
+  padding: 0 30px;
+  align-items: start;
+  align-self: baseline;
+}
+.main .list h1 {
+  margin-bottom: 10px;
+  padding-left: 40px;
+  position: relative;
+}
+.main .list .list-item1 h1::before {
+  content: " ";
+  background: url("../images/Experience.svg") no-repeat center;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  left: 4px;
+  top: 6px;
+}
+.main .list .list-item2 h1::before {
+  content: " ";
+  background: url("../images/Clients.svg") no-repeat center;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  left: 4px;
+  top: 6px;
+}
+.main .list .list-item3 h1::before {
+  content: " ";
+  background: url("../images/Probono.svg") no-repeat center;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  left: 4px;
+  top: 6px;
+}
+.main .list span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #323264;
+}
+
+/*# sourceMappingURL=styles_about-us.css.map */

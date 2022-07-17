@@ -1,0 +1,101 @@
+@import "variables";
+.wrapper-main{
+  margin: 0 auto;
+  width: 92vw;
+  max-width: 1600px;
+}
+.main{
+  display:grid;
+  grid-template-columns:0.63fr 0.37fr;
+  grid-column-gap: 30px;
+  margin-top: 60px;
+  padding: 0 120px;
+  @media screen and (min-width: 1546px){
+    grid-template-columns:0.71fr 0.3fr;
+  }
+  @media screen and (max-width: $intermediate){
+    padding: 0;
+  }
+  @media screen and (max-width: $tabletHD){
+    grid-template-columns:0.54fr 0.47fr;
+  }
+  h1{
+    padding: 0;
+    margin: 0 0 28px;
+  }
+
+  .main-text{
+    p{
+      @include p;
+      text-align: left;
+    }
+
+  }
+
+  .list{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-row-gap: 40px;
+    border-left: 4px solid $greyseparator;
+    padding:0 30px;
+    align-items: start;
+    align-self: baseline;
+
+    h1{
+      margin-bottom: 10px;
+      padding-left: 40px;
+      position: relative;
+    }
+
+    .list-item1{
+      h1::before{
+        content: " ";
+        background: url("../images/Experience.svg") no-repeat center;
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        left: 4px;
+        top: 6px;
+      }
+    }
+    .list-item2{
+      h1::before{
+        content: " ";
+        background: url("../images/Clients.svg") no-repeat center;
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        left: 4px;
+        top: 6px;
+      }
+    }
+
+    .list-item3{
+      h1::before{
+        content: " ";
+        background: url("../images/Probono.svg") no-repeat center;
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        left: 4px;
+        top: 6px;
+      }
+    }
+
+
+
+    span{
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      color: $maindark;
+
+    }
+
+  }
+
+}
+
+
+
