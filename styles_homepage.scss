@@ -205,11 +205,19 @@ button.language{
   ////    width: 100vw;
   ////  }
   //}
-  .wrapper.consistent{
-  @media screen and (max-width: 999px){
-    width: 100vw;
+  //.wrapper.consistent{
+  ////@media screen and (max-width: 999px){
+  ////  width: 100vw;
 
-  }
+  //}
+  //}
+  .wrapper-consistent{
+    width: calc(100vw - 120px);
+    margin: 0 auto;
+    @media screen and (max-width: 999px) {
+      width: 100vw;
+      
+    }
   }
   .second-section {
     display: grid;
@@ -224,8 +232,9 @@ button.language{
       padding: 0;
     }
     @media screen and (max-width: 999px) {
-      grid-template-columns:1fr;
-      grid-template-rows: 0.5fr 0.5fr;
+      grid-template-rows: auto auto;
+      grid-template-columns: none;
+      padding-left: 60px;
     }
 
     .consistent-left {
@@ -238,7 +247,7 @@ button.language{
         padding-right: 0;
         border-right: 0;
         margin: 0 0 60px;
-
+        overflow-x: hidden;
       }
 
       h1:not(:first-child) {
@@ -247,6 +256,10 @@ button.language{
       h1 {
         margin: 0;
         padding: 0;
+        white-space: nowrap;
+        @media screen and (max-width: 999px){
+          margin: 0 30px 0 0;
+        }
 
         a {
           font-weight: 700;
@@ -256,30 +269,40 @@ button.language{
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           width: 100vw;
+          @media screen and(max-width: 999px) {
+            margin-right: 30px;
+            
+          }
         }
       }
-        h1:first-child a{
+      h1:first-child a{
           margin: 0;
           padding: 0;
           text-align: right;
           color: $gradientredtext;
         }
 
-        h1:not(:first-child) {
+      h1:not(:first-child) {
           a {
             margin: 30px 0 0 0;
             padding: 0;
             text-align: right;
             -webkit-text-fill-color: $greytext;
+            @media screen and (max-width: 999px){
+              margin-right: 30px;
+            }
           }
         }
-        h1 a:hover {
+      h1 a:hover {
           -webkit-text-fill-color: $coloraccent;
-        }
+      }
 
       h1 {
-        @media screen and(max-width: $intermediate) {
-          margin: 0;
+        //@media screen and(max-width: $intermediate) {
+        //  margin: 0;
+        //}
+        @media screen and (max-width: 999px){
+          margin: 0 30px 0 0;
         }
       }
 
@@ -295,13 +318,16 @@ button.language{
       @media screen and (max-width: 999px) {
         border-top: 4px solid rgba(255, 255, 255, 0.3);
         padding: 60px 0 0 0;
-        margin: 0 60px;
+        margin: 0;
         border-left: none;
-        width: calc(100vw - 120px);
+        //width:100vw;
       }
 
       @media screen and(max-width: $desktopSD) {
         padding-right: 0;
+      }
+      @media screen and (max-width: 999px){
+        grid-row: 2;
       }
 
       h2 {
@@ -564,6 +590,10 @@ button.language{
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: 0.3s;
+    }
+    .sponsor-list:hover{
+      transform: scale(1.1);
     }
     @media screen and (max-width: $tabletSD){
       grid-template-columns: repeat(3, 1fr);
@@ -644,6 +674,8 @@ button.language{
         display: none;
       }
     }
+
+
   }
 }
 

@@ -191,8 +191,12 @@ button.language {
     height: 32px;
   }
 }
+.container-gradient .wrapper-consistent {
+  width: calc(100vw - 120px);
+  margin: 0 auto;
+}
 @media screen and (max-width: 999px) {
-  .container-gradient .wrapper.consistent {
+  .container-gradient .wrapper-consistent {
     width: 100vw;
   }
 }
@@ -215,8 +219,9 @@ button.language {
 }
 @media screen and (max-width: 999px) {
   .container-gradient .second-section {
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 0.5fr;
+    grid-template-rows: auto auto;
+    grid-template-columns: none;
+    padding-left: 60px;
   }
 }
 .container-gradient .second-section .consistent-left {
@@ -231,6 +236,7 @@ button.language {
     padding-right: 0;
     border-right: 0;
     margin: 0 0 60px;
+    overflow-x: hidden;
   }
 }
 .container-gradient .second-section .consistent-left h1:not(:first-child) {
@@ -239,6 +245,12 @@ button.language {
 .container-gradient .second-section .consistent-left h1 {
   margin: 0;
   padding: 0;
+  white-space: nowrap;
+}
+@media screen and (max-width: 999px) {
+  .container-gradient .second-section .consistent-left h1 {
+    margin: 0 30px 0 0;
+  }
 }
 .container-gradient .second-section .consistent-left h1 a {
   font-weight: 700;
@@ -248,6 +260,11 @@ button.language {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   width: 100vw;
+}
+@media screen and (max-width: 999px) {
+  .container-gradient .second-section .consistent-left h1 a {
+    margin-right: 30px;
+  }
 }
 .container-gradient .second-section .consistent-left h1:first-child a {
   margin: 0;
@@ -261,12 +278,17 @@ button.language {
   text-align: right;
   -webkit-text-fill-color: #B3B3BA;
 }
+@media screen and (max-width: 999px) {
+  .container-gradient .second-section .consistent-left h1:not(:first-child) a {
+    margin-right: 30px;
+  }
+}
 .container-gradient .second-section .consistent-left h1 a:hover {
   -webkit-text-fill-color: #F0145A;
 }
-@media screen and (max-width: 1078px) {
+@media screen and (max-width: 999px) {
   .container-gradient .second-section .consistent-left h1 {
-    margin: 0;
+    margin: 0 30px 0 0;
   }
 }
 .container-gradient .second-section .consistent-right {
@@ -280,14 +302,18 @@ button.language {
   .container-gradient .second-section .consistent-right {
     border-top: 4px solid rgba(255, 255, 255, 0.3);
     padding: 60px 0 0 0;
-    margin: 0 60px;
+    margin: 0;
     border-left: none;
-    width: calc(100vw - 120px);
   }
 }
 @media screen and (max-width: 1437px) {
   .container-gradient .second-section .consistent-right {
     padding-right: 0;
+  }
+}
+@media screen and (max-width: 999px) {
+  .container-gradient .second-section .consistent-right {
+    grid-row: 2;
   }
 }
 .container-gradient .second-section .consistent-right h2 {
@@ -525,6 +551,10 @@ button.language {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.3s;
+}
+.five-section .sponsors-list .sponsor-list:hover {
+  transform: scale(1.1);
 }
 @media screen and (max-width: 886px) {
   .five-section .sponsors-list {
