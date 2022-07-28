@@ -1,8 +1,292 @@
 @import "variables";
+
+*, html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  list-style: none;
+  outline: none;
+}
+
+.wrapper-header{
+  width: calc(100vw - 120px);
+  max-width: 1600px;
+  margin: 0 auto;
+  @media screen and (max-width: 639px){
+    width: calc(100vw - 30px);
+  }
+}
+
+.header{
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  grid-template-rows: .5fr .5fr;
+  padding-top: 50px;
+  @media screen and(max-width: 916px){
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    margin: 0 0 60px;
+    grid-row-gap: 30px;
+  }
+  @media screen and (max-width: 639px){
+    margin: 0;
+    grid-template-columns: 1.3fr .7fr;
+    grid-template-rows: auto auto;
+    grid-row-gap: 0;
+    padding: 10px 0 0 0;
+    position: relative;
+  }
+}
+
+.header-left{
+  grid-row-start: 1;
+  grid-row-end: 3;
+  display: flex;
+  flex-direction: row;
+  @media screen and (max-width: 916px){
+    grid-row: 2;
+  }
+  @media screen and (max-width: 639px){
+    padding-top: 15px;
+  }
+}
+
+.logo-wrapper{
+  position: relative;
+  margin-right: 29px;
+}
+.logo-wrapper:after{
+  content: "";
+  background: url("../images/icon_homepage/icon_header+footer/Slash.svg") no-repeat;
+  position: absolute;
+  width: 21px;
+  height: 47px;
+  margin: 0 4px;
+}
+
+.header-left p{
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 44px;
+  color: $maindark;
+  @media screen and (max-width: $intermediate){
+  font-size: 22px;
+  }
+}
+
+
+.header-right{
+  display: flex;
+  flex-direction: column;
+}
+.nav-header {
+  display: grid;
+  grid-template-columns: repeat(4,auto);
+  justify-content: end;
+  &.right-first {
+    @media screen and (max-width: 916px) {
+      margin-bottom: 0;
+      grid-row: 1;
+      grid-column: 1;
+      justify-content: start;
+    }
+  }
+
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+button{
+  border: none;
+  background: none;
+  &.language {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: $greytext;
+    border-radius: 8px;
+    padding: 5px 7px;
+    width: 33px;
+    background: none;
+  }
+}
+
+.language:hover{
+  background: $greybackground;
+}
+
+header ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  li {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: right;
+    color: $greytext;
+    position: relative;
+    margin-left: 18px;
+  }
+  li.language-li{
+    margin-left: 0;
+  }
+}
+
+.nav-header.right-first {
+  margin-bottom: 16px;
+  @media screen and (max-width: 916px){
+    margin-bottom: 0;
+  }
+
+  ul {
+    align-items: center;
+  }
+
+  & a {
+    font-weight: 700;
+    color: $greytext;
+  }
+}
+
+button.language.active {
+  background: $coloraccent;
+  color: $greybackground;
+}
+
+.language:hover{
+  background: $greybackground;
+}
+
+.nav-header.right-first ul li::before {
+  content: " ";
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  background: $greyseparator;
+  border-radius: 50%;
+  top: 8px;
+  left: -12px;
+}
+.nav-header.right-first ul li.language-li::before{
+  display: none;
+}
+.nav-header.right-first ul li:last-of-type::before{
+  top:12px;
+}
+
+
+.nav-header.right-first ul li .facebook-header:hover svg{
+  color: $coloraccent;
+}
+
+.nav-header.right-second ul li a {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: $blueregular;
+  margin-left: 15px;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+li.language {
+  margin-left: 0;
+}
+
+.nav-header.right-second{
+  @media screen and (max-width: 916px){
+    grid-column: 1;
+    justify-content: start;
+      li{
+        margin-left: 0;
+        margin-right: 15px;
+            a.active{
+              margin-left: 0;
+            }
+      }
+  }
+}
+
+.nav-header.right-second ul li a:hover {
+  border-bottom: 2px solid $blueregular;
+}
+
+.nav-header.right-second ul li a.active {
+  color: $coloraccent;
+}
+
+.nav-header.right-second ul li a.active:hover {
+  border-bottom: 2px solid $coloraccent;
+}
+
+
+
+.header-button-burger{
+  display: none;
+  position: relative;
+}
+
+.submenu{
+  background: $white;
+  padding: 12px;
+  border-radius: 12px 12px 0 0;
+  position: absolute;
+  flex-direction: column;
+  align-items: flex-end;
+  top: 94px;
+  left: 1px;
+  z-index: 1;
+  display:none;
+
+  li.submenu-link:not(:first-child){
+    background: $greybackground;
+    border-radius: 12px;
+    padding: 7px 0;
+    width: 335px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: $blueregular;
+    text-align: center;
+    margin-top: 15px;
+
+    .active{
+      color: $coloraccent;
+    }
+
+  }
+
+}
+
+
+
+
 .wrapper-main{
   margin: 0 auto;
-  width: 92vw;
+  width: calc(100vw - 120px);
   max-width: 1600px;
+  //@media screen and (min-width: $desktopHD){
+  //  padding: 0 160px;
+  //}
+  ////max-width: 1600px;
+  ////@media screen and (min-width: $intermediate){
+  ////  padding: 0 120px;
+  ////}
+  //@media screen and (max-width: $desktopSD){
+  //  padding: 0 60px;
+  //}
+  @media screen and(max-width:660px){
+    width: calc(100vw - 60px);
+  }
 }
 .main{
   display:grid;
@@ -19,9 +303,19 @@
   @media screen and (max-width: $tabletHD){
     grid-template-columns:0.54fr 0.47fr;
   }
-  h1{
+  @media screen and(max-width:$tabletSD){
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-row-gap: 30px;
+
+  }
+  h1 {
     padding: 0;
     margin: 0 0 28px;
+    @media screen and(max-width: $mobile) {
+      font-size: 30px;
+      line-height: 37px;
+    }
   }
 
   .main-text{
@@ -51,7 +345,7 @@
     .list-item1{
       h1::before{
         content: " ";
-        background: url("../images/Experience.svg") no-repeat center;
+        background: url("../images/photo/Experience.svg") no-repeat center;
         position: absolute;
         width: 32px;
         height: 32px;
@@ -62,7 +356,7 @@
     .list-item2{
       h1::before{
         content: " ";
-        background: url("../images/Clients.svg") no-repeat center;
+        background: url("../images/photo/Clients.svg") no-repeat center;
         position: absolute;
         width: 32px;
         height: 32px;
@@ -74,7 +368,7 @@
     .list-item3{
       h1::before{
         content: " ";
-        background: url("../images/Probono.svg") no-repeat center;
+        background: url("../images/icon_homepage/icon_about_us/Probono.svg") no-repeat center;
         position: absolute;
         width: 32px;
         height: 32px;
@@ -83,19 +377,269 @@
       }
     }
 
-
-
     span{
       font-weight: 400;
       font-size: 16px;
       line-height: 20px;
       color: $maindark;
+    }
+  }
 
+}
+
+
+.background{
+  max-width: 1920px;
+  margin: 60px auto;
+  position: relative;
+
+  img{
+    width: 100%;
+    object-fit: cover;
+    animation-duration: 3s;
+    animation-name:shadow;
+    animation-iteration-count: 1;
+    animation-delay: .5s;
+
+  }
+
+    p{
+      font-weight: 700;
+      font-size: 96px;
+      line-height: 117px;
+      text-align: center;
+      letter-spacing: 63px;
+      text-transform: uppercase;
+      color: $white;
+      opacity: 0.8;
+      text-shadow: 0 15px 30px rgba(40, 40, 86, 0.8);
+      position: absolute;
+      left: calc(50% - 478px/2);
+      top: calc(50% - 117px/2 + 2.5px);
+      animation-duration: 3s;
+      animation-name:shadowp;
+      animation-iteration-count: 1;
+      animation-delay: .5s;
+      @media screen and (max-width:$tabletHD ){
+        font-size: 86px;
+        line-height: 105px;
+        left: calc(50% - 448px/2);
+        top: calc(50% - 105px/2 - 0.23px);
+      }
+      @media screen and (max-width:$tabletSD ){
+        font-size: 46px;
+        line-height: 56px;
+        left: calc(50% - 328px/2);
+        top: calc(50% - 56px/2 + 0.2px);
+      }
+      @media screen and (max-width: $mobile){
+        font-size: 36px;
+        line-height: 44px;
+        left: calc(50% - 148px/2);
+        top: calc(50% - 44px/2 - 0.03px);
+        letter-spacing: 13px;
+      }
+    }
+
+}
+
+.main-after{
+  display:grid;
+  grid-template-columns:0.63fr 0.37fr;
+  grid-column-gap: 30px;
+  padding: 0 120px;
+  @media screen and (min-width: 1546px){
+    grid-template-columns:0.71fr 0.3fr;
+  }
+  @media screen and (max-width: $intermediate){
+    padding: 0;
+  }
+  @media screen and (max-width: $tabletHD){
+    grid-template-columns:0.54fr 0.4fr;
+  }
+  @media screen and(max-width:$tabletSD){
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-row-gap: 30px;
+  }
+  h1{
+    margin: 0;
+    padding: 0;
+    justify-items: right;
+    text-align: left;
+    @media screen and(max-width:$mobile){
+      font-size: 30px;
+      line-height: 37px;
+    }
+
+  }
+  .main-text-after{
+
+    p{
+      @include p
     }
 
   }
 
+
 }
+
+.wrapper-after{
+  width: 100%;
+  background: $greybackground;
+  margin-top: 30px;
+}
+
+.achivments{
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-row-gap: 30px;
+  padding: 30px 0;
+  border-bottom: 2px solid $greyseparator;
+
+ // .carousel-indicators {
+ //   bottom: -56px;
+ //}
+ //
+ // .carousel-inner {
+ //   background: $white;
+ //   min-width: 300px;
+ //   border-radius: 12px;
+ // }
+ // .carousel-indicators [data-bs-target]{
+ //   background: $blueregular;
+ //   opacity: 0.2;
+ //   border-radius: 50%;
+ //   width: 16px;
+ //   height: 16px;
+ //   border: none;
+ // }
+
+  h4{
+    grid-column: 1 / -1;
+    text-align: center;
+    @include h4;
+    text-transform: uppercase;
+  }
+
+//#carouselExampleIndicators{
+//  display: none;
+//  @media screen and(max-width: 600px){
+//    display: block;
+//  }
+//}
+
+
+  .item-banners{
+    display: grid;
+    grid-template-columns: repeat(4, minmax(300px, 1fr));
+    max-width: 1600px;
+    grid-column-gap: 40px;
+    @media screen and(max-width: $desktopSD) {
+      grid-template-columns: repeat(4, minmax(196px, 1fr));
+    }
+    @media screen and(max-width: 980px) {
+      grid-template-columns: repeat(4, minmax(132px, 1fr));
+    }
+    @media screen and(max-width: 764px){
+        grid-template-columns: repeat(2, minmax(270px, 1fr));
+        grid-row-gap: 40px;
+      }
+    @media screen and(max-width: 700px){
+      grid-template-columns: repeat(2, minmax(255px, 1fr));
+      grid-row-gap: 40px;
+    }
+    @media screen and(max-width: 600px) {
+      grid-template-columns: minmax(255px, 255px);
+      margin: 0 auto;
+    }
+     .banner{
+      display: flex;
+      background: $white;
+      min-width: 300px;
+      border-radius: 12px;
+      background-size: contain;
+       @media screen and(max-width: $desktopSD){
+         min-width: 196px;
+       }
+       @media screen and(max-width: 980px){
+         min-width: 132px;
+       }
+       @media screen and(max-width: 700px){
+         min-width: 255px;
+       }
+       &:not(:first-child) {
+         @media screen and (max-width: $mobile) {
+           display: none;
+         }
+       }
+       img{
+         align-items: center;
+         margin: 25px auto;
+         @media screen and(max-width: 980px){
+           height: 40px;
+         }
+       }
+    }
+     .banner:hover img{
+      transform: scale(1.1);
+    }
+
+  }
+
+
+}
+
+.carusel {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  button {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 15px;
+    &.carusel-item {
+      background: $blueregular;
+      opacity: 0.2;
+    }
+    &.active{
+      opacity: 1;
+    }
+    &.carusel-item:hover{
+      opacity: 0.5;
+    }
+  }
+}
+
+@keyframes shadow {
+    from {
+      filter: grayscale(1);
+    }
+
+    to {
+      //filter: grayscale(5);
+      filter: brightness(10%);
+    }
+  }
+
+@keyframes shadowp{
+  from{
+    top: 0;
+    font-size:0;
+
+
+  }
+  to{
+    font-size: 150px;
+    opacity: 1;
+    color: $coloraccent;
+
+  }
+}
+
 
 
 
